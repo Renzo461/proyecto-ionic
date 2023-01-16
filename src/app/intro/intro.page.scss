@@ -1,0 +1,47 @@
+// ion-content {
+//   --background: blue;
+// }
+
+ion-slides {
+  height: 100%;
+  // max-width: 800px;
+  width: 100%;
+  --bullet-background-active: var(--mc-s-2);
+}
+
+ion-slide:nth-child(n) {
+  background: linear-gradient(180deg, var(--mc-p-2) 0%, var(--mc-p-5) 100%);
+  color: var(--mc-n-1);
+}
+
+ion-slide:nth-child(2n) {
+  background: linear-gradient(180deg, var(--mc-s-1) 0%, var(--mc-s-2) 100%);
+  color: var(--mc-b-1);
+}
+
+ion-slide {
+  display: flex;
+  flex-direction: column;  
+}
+ion-slide>h1 {  
+  font-size: 24px;
+  font-weight: 700;
+}
+ion-slide>p {  
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 50px;  
+}
+
+ion-slide>ion-icon[name="close"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--icon-color-danger);
+  font-size: 40px;
+  color: var(--mc-n-1);
+}
+
+ion-slide>ion-icon[name="close"]:hover {
+  color: var(--mc-sh-1);
+}
