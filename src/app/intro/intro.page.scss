@@ -5,7 +5,7 @@
 ion-slides {
   height: 100%;
   // max-width: 800px;
-  width: 100%;
+  width: 100%;  
   --bullet-background-active: var(--mc-s-2);
 }
 
@@ -21,7 +21,7 @@ ion-slide:nth-child(2n) {
 
 ion-slide {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;    
 }
 ion-slide>h1 {  
   font-size: 24px;
@@ -35,8 +35,8 @@ ion-slide>p {
 
 ion-slide>ion-icon[name="close"] {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   color: var(--icon-color-danger);
   font-size: 40px;
   color: var(--mc-n-1);
