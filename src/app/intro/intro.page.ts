@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 interface Slide {
   title: string
@@ -52,10 +53,11 @@ export class IntroPage implements OnInit {
   ]
 
   finish() {
-    this.router.navigateByUrl("/home")
+    this.storage.set("isIntroShowed", true)
+    this.router.navigateByUrl("/menu/home")
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private storage: Storage) { }
 
   ngOnInit() {
   }

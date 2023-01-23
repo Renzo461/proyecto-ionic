@@ -1,0 +1,19 @@
+form{
+    background-color: var(--mc-b-1);
+    border-radius: 20px;
+}
+
+ion-item {
+    --color: var(--mc-n-2);
+    --background: #00000000;
+    --background-focused: #00000000;
+}
+
+ion-input {
+    --color: var(--mc-n-1);
+}
+
+ion-button {    
+    --background: var(--mc-s-1);    
+    --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);    
+}

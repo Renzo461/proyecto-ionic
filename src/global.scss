@@ -36,13 +36,3 @@
 ion-content{
     --background: var(--mc-p-1);    
 }
-ion-button {
-    font-size: 16px;
-    --background: var(--mc-b-1);
-    --background-activated: var(--mc-sh-1);
-    --background-activated-opacity: var(--mc-sh-2);
-    color: var(--mc-n-1);
-    border-radius: 10px;
-    --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    text-transform: uppercase;
-}
