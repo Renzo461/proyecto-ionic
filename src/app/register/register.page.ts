@@ -2,16 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authenticate.service';
-
-// interface DocumentType {
-//   id: number
-//   value: string
-// }
-
-// interface Career{
-//   id: number
-//   value: string
-// }
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -23,32 +14,52 @@ export class RegisterPage implements OnInit {
   documents = [
     {
       id: 1,
-      value: "DNI"
+      value: "cc"
     },
     {
       id: 2,
-      value: "RUC"
+      value: "ti"
     },
     {
       id: 3,
-      value: "Pasaporte"
+      value: "ce"
     },
     {
       id: 4,
-      value: "Carnet Ext."
+      value: "ps"
+    },
+    {
+      id: 4,
+      value: "rc"
     },
   ]
 
   careers = [
     {
       id: 1,
-      value: "Ing. Sistemas"
+      value: "sistemas"
+    },
+    {
+      id: 2,
+      value: "industrial"
+    },
+    {
+      id: 3,
+      value: "contaduria"
+    },
+    {
+      id: 4,
+      value: "administracion"
     }
   ]
 
   registerForm: FormGroup;
 
-  constructor(private navCtrl: NavController, private formBuilder: FormBuilder, private authenticate: AuthenticateService
+  constructor(
+    private navCtrl: NavController,
+    private formBuilder: FormBuilder,
+    private authenticate: AuthenticateService,
+    private alertController: AlertController
   ) {
 
     this.registerForm = this.formBuilder.group({
@@ -112,9 +123,25 @@ export class RegisterPage implements OnInit {
 
   registerUser(register_form: any) {
     console.log(register_form)
-    this.authenticate.registerUser(register_form).then(() => {
-      this.navCtrl.navigateForward("/login");
-    });
+    this.authenticate.registerUser(register_form)
+      .then(() => {
+        this.navCtrl.navigateForward("/login");
+      })
+      .catch(err => {
+        this.presentAlert("Opps", "Hubo un error", err);
+      })
+  }
+
+  async presentAlert(header: any, subHeader: any, message: any) {
+    const alert = await this.alertController.create(
+      {
+        header: header,
+        subHeader: subHeader,
+        message: message,
+        buttons: ['Ok']
+      }
+    );
+    await alert.present();
   }
 
 }

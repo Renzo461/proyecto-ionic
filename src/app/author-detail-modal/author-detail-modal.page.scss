@@ -1,0 +1,17 @@
+ion-content{
+    --color: var(--mc-n-1);
+}
+.img>img{
+    height: 300px;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.gen{
+    background-color: var(--mc-s-2);
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}

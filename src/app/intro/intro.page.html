@@ -1,10 +1,9 @@
 <ion-content>
   <ion-slides pager="true" [options]="slideOpt">
-    <ion-slide *ngFor="let slide of slides; let i = index" class="s{{i+1}}">
+    <ion-slide *ngFor="let slide of slides; let i = index" class="ion-padding">
       <ion-icon name="close" (click)="finish()"></ion-icon>
       <img src={{slide.img}} alt="lobo">
       <h1 class="ion-text-uppercase">{{slide.title}}</h1>
-      <!-- <h2>{{slide.subtitle}}</h2>       -->
       <p>{{slide.description}}</p>
       <ion-button>Ver más</ion-button>
     </ion-slide>

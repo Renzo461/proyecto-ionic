@@ -28,11 +28,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-ion-content{
-    --background: var(--mc-p-1);    
+
+ion-content {
+    --background: var(--mc-p-1);
+}
+
+.list-md{
+    margin: 0.5rem;    
+}
+
+.list-md>ion-item:nth-child(2n+1){
+    background: rgba(0, 0, 0, 0.1);
+}
+.list-md>ion-item:nth-child(2n){
+    background: rgba(0, 0, 0, 0.035);
 }

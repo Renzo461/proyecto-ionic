@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Autores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 class="ion-text-center ion-text-uppercase">{{author.name}}</h1>
+  <div class="img ion-text-center ion-margin">
+    <img [src]=author.photo class="cover" />
+  </div>
+  <ion-grid>
+
+    <ion-row class="ion-margin">
+      <ion-col size="12" class="ion-text-start ion-text-uppercase">
+        Generos:
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-row>
+          <ion-col *ngFor="let genres of author.genres" class="ion-text-center ion-text-capitalize">
+            <div class="gen">
+              {{genres}}
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-margin">
+      <ion-col size="6" class="ion-text-start ion-text-uppercase">
+        Seguidores:
+      </ion-col>
+      <ion-col class="ion-text-start">
+        {{author.followers}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-margin">
+      <ion-col size="6" class="ion-text-start ion-text-uppercase">
+        Popularidad:
+      </ion-col>
+      <ion-col class="ion-text-start">
+        {{author.popularity}}
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

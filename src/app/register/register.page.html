@@ -1,11 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Registro</ion-title>
-    <ion-buttons>
-      <ion-button (click)="goToLogin()">
-        Back
-      </ion-button>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
     </ion-buttons>
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
@@ -29,7 +27,7 @@
       <ion-item>        
         <ion-select placeholder="Tipo de documento" formControlName="document_type" class="ion-text-end">
           <ion-select-option *ngFor="let document of documents" [value]=document.id>
-            {{document.value}}
+            {{document.value | uppercase}}
           </ion-select-option>
         </ion-select>
       </ion-item>
@@ -46,7 +44,7 @@
       <ion-item>
         <ion-select placeholder="Carrera" formControlName="career">
           <ion-select-option *ngFor="let career of careers" [value]=career.id>
-            {{career.value}}
+            {{career.value | titlecase}}
           </ion-select-option>
         </ion-select>
       </ion-item>

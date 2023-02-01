@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item lines="full" *ngFor="let favorite of my_favorite_books" (click)="showBook(favorite)">
+      <ion-label>{{favorite.name}}</ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
